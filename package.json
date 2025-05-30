@@ -1,0 +1,56 @@
+{
+  "name": "my-video",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@aws-sdk/client-polly": "^3.810.0",
+    "@aws-sdk/client-s3": "^3.816.0",
+    "@google-cloud/text-to-speech": "^6.0.1",
+    "@google/genai": "^0.9.0",
+    "@remotion/bundler": "4.0.286",
+    "@remotion/cli": "4.0.286",
+    "@remotion/lambda": "4.0.286",
+    "@remotion/renderer": "4.0.286",
+    "@remotion/transitions": "4.0.286",
+    "aws-serverless-express": "^3.4.0",
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "fs-extra": "^11.3.0",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^148.0.0",
+    "mime": "^4.0.7",
+    "nodemailer": "^7.0.3",
+    "nodemon": "^3.1.9",
+    "openai": "^4.97.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "remotion": "4.0.286",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.286",
+    "@types/node": "^22.14.1",
+    "@types/react": "19.0.0",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.3.3",
+    "typescript": "5.5.4"
+  },
+  "scripts": {
+    "start": "node render.js",
+    "dev": "nodemon render.js --ignore token.json",
+    "build": "remotion bundle",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json",
+      "public/javascripts/*.js"
+    ]
+  }
+}
