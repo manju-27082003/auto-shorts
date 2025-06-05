@@ -1,86 +1,129 @@
-# 🚀 AI-Powered Space Video Generator
+# Auto Shorts 🎥🚀
 
-This Node.js project automates the creation, narration, captioning, and publishing of daily space-themed videos using AI and powerful APIs. It generates visually stunning, voice-narrated videos based on NASA’s Astronomy Picture of the Day (APOD), enhanced by AI-generated content, and uploads them automatically to YouTube.
+![GitHub release](https://img.shields.io/github/release/manju-27082003/auto-shorts.svg)
+![GitHub issues](https://img.shields.io/github/issues/manju-27082003/auto-shorts.svg)
+![GitHub forks](https://img.shields.io/github/forks/manju-27082003/auto-shorts.svg)
+![GitHub stars](https://img.shields.io/github/stars/manju-27082003/auto-shorts.svg)
 
----
+Welcome to **Auto Shorts**, an automated AI-powered space video generator. This project leverages various technologies to create engaging space-themed videos and publish them daily on YouTube. 
 
-## 📽️ Key Features
+## Table of Contents
 
-- 🎥 **Video Generation**: Built with [Remotion](https://remotion.dev) for dynamic video rendering.
-- 🧠 **Script Writing**: Uses **Google Gemini AI** to generate engaging narratives based on NASA’s daily content.
-- 🖼️ **Image Generation**: Integrates **Pollination AI** to enhance or generate complementary space visuals.
-- 🔊 **Voice Narration**: Uses **AWS Polly** to convert AI-generated text into lifelike narration.
-- 🎙️ **Captions Generation**: Transcribes narration using **AssemblyAI** for automatic subtitles.
-- 🌌 **Daily Space Content**: Fetches content from **NASA APOD API** to ensure authenticity.
-- ☁️ **Cloud Rendering**: Scalable video rendering via **Remotion Lambda**.
-- 📤 **YouTube Upload**: Publishes videos to YouTube automatically using **YouTube Data API**.
-- 🧾 **Metadata Storage**: Saves video metadata (title, description, timestamps, etc.) to **AWS S3**.
-- 🤖 **Daily Automation**: Orchestrated using **Make (Integromat)** for daily execution.
-- 🌐 **Deployment**: Deployed on **Render** for fast and reliable hosting.
+1. [Introduction](#introduction)
+2. [Technologies Used](#technologies-used)
+3. [Features](#features)
+4. [Installation](#installation)
+5. [Usage](#usage)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Links](#links)
 
----
+## Introduction
 
-## 🛠️ Tech Stack
+In an age where content is king, **Auto Shorts** provides a seamless solution for generating space-related videos using cutting-edge AI technology. With tools like Node.js, Remotion, and various APIs, you can automate the video creation process. 
 
-| Feature               | Technology               |
-|----------------------|--------------------------|
-| Backend              | Node.js, Express         |
-| Video                | Remotion, Remotion Lambda|
-| AI Scripting         | Gemini AI                |
-| Image Generation     | Pollination AI           |
-| Voice Synthesis      | AWS Polly                |
-| Captioning           | AssemblyAI               |
-| Data Source          | NASA APOD API            |
-| Upload               | YouTube Data API         |
-| Metadata Storage     | AWS S3                   |
-| Automation           | Make (Integromat)        |
-| Deployment           | Render                   |
+This project fetches data from NASA's Astronomy Picture of the Day (APOD) API, synthesizes audio using AWS Polly and AssemblyAI, and composes visually stunning videos. You can find the latest releases of the project [here](https://github.com/manju-27082003/auto-shorts/releases).
 
+## Technologies Used
 
----
+**Auto Shorts** integrates several technologies to deliver its functionality:
 
-## ⚙️ How It Works
+- **Node.js**: A JavaScript runtime that allows you to build scalable applications.
+- **Remotion**: A framework for creating videos programmatically using React.
+- **Gemini API**: A service for retrieving space-related data.
+- **AWS Polly**: Converts text to lifelike speech.
+- **AssemblyAI**: Provides speech recognition and transcription services.
+- **NASA APOD API**: Fetches the Astronomy Picture of the Day.
 
-1. 🔭 Fetch APOD data from NASA.
-2. ✍️ Generate video script using Gemini AI.
-3. 🖼️ Generate or enhance visuals using Pollination AI.
-4. 🗣️ Generate voiceover using AWS Polly.
-5. 📝 Transcribe voice to captions via AssemblyAI.
-6. 🎬 Render video using Remotion Lambda.
-7. 📤 Upload to YouTube with the YouTube API.
-8. 🧾 Upload metadata (title, caption, etc.) to AWS S3.
-9. ⏰ Scheduled and triggered automatically via Make.com.
-10. 🌍 Hosted and monitored on Render.
+## Features
 
----
+- **Automated Video Creation**: Generate videos daily without manual intervention.
+- **AI-Powered Narration**: Use AWS Polly for natural-sounding voiceovers.
+- **Dynamic Content**: Fetch daily space images and information from NASA's APOD API.
+- **Seamless YouTube Integration**: Automatically publish videos to your YouTube channel.
+- **Docker Support**: Run the application in a containerized environment.
 
-## 🔐 Environment Variables (example)
+## Installation
 
-```env
-GEMINI_API_KEY=
-GOOGLE_APPLICATION_CREDENTIALS=
-REFRESH_TOKEN=
-CLIENT_ID=
-CLIENT_SECRET=
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-NASA_API_KEY=
-GMAIL_APP_PASSWORD=
-ASSEMBLYAI_API_KEY=
-REMOTION_AWS_ACCESS_KEY_ID=
-REMOTION_AWS_SECRET_ACCESS_KEY=
-S3_POLICY_ACCESS_KEY=
-S3_POLICY_SECRET_KEY=
+To get started with **Auto Shorts**, follow these steps:
 
-🧪 Local Development
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/manju-27082003/auto-shorts.git
+   cd auto-shorts
+   ```
 
-git clone https://github.com/CoderAyushman/auto-shorts.git
-cd auto-shorts
-npm install
-nodemon render.js
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Use /generate route to trigger the full workflow manually for testing.
+3. **Set up environment variables**:
+   Create a `.env` file in the root directory and add your API keys and configuration settings. Example:
+   ```
+   NASA_API_KEY=your_nasa_api_key
+   AWS_ACCESS_KEY_ID=your_aws_access_key
+   AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+   YOUTUBE_API_KEY=your_youtube_api_key
+   ```
 
-🧑‍🚀 Author
-Ayushman
-Made with a love for space and automation ✨
+4. **Build the project**:
+   ```bash
+   npm run build
+   ```
+
+5. **Run the application**:
+   ```bash
+   npm start
+   ```
+
+For detailed installation instructions, check the [Releases](https://github.com/manju-27082003/auto-shorts/releases) section.
+
+## Usage
+
+Once the application is running, it will automatically generate a new video each day. Here’s how it works:
+
+1. **Fetch Daily Data**: The application retrieves the Astronomy Picture of the Day from NASA's API.
+2. **Generate Audio**: The description is converted into speech using AWS Polly.
+3. **Create Video**: Remotion composes the video using the fetched image and audio.
+4. **Publish to YouTube**: The video is uploaded to your YouTube channel.
+
+You can customize various settings in the `.env` file to suit your needs.
+
+## Contributing
+
+We welcome contributions! If you want to help improve **Auto Shorts**, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+3. Make your changes and commit them:
+   ```bash
+   git commit -m "Add your message here"
+   ```
+4. Push to your branch:
+   ```bash
+   git push origin feature/your-feature
+   ```
+5. Create a pull request.
+
+Your contributions help make this project better for everyone.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Links
+
+For more information, visit the following resources:
+
+- [GitHub Releases](https://github.com/manju-27082003/auto-shorts/releases)
+- [Node.js Documentation](https://nodejs.org/en/docs/)
+- [Remotion Documentation](https://www.remotion.dev/docs)
+- [AWS Polly Documentation](https://aws.amazon.com/polly/)
+- [AssemblyAI Documentation](https://docs.assemblyai.com/)
+- [NASA APOD API Documentation](https://api.nasa.gov/)
+
+Explore the potential of automated video generation with **Auto Shorts**. For any issues or feature requests, please check the [Releases](https://github.com/manju-27082003/auto-shorts/releases) section or open an issue in the repository.
